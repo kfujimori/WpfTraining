@@ -12,10 +12,10 @@
             <Setter Property="Margin" Value="2"/>
         </Style>
     </Window.Resources>
-    <Grid>
+    <Grid ShowGridLines="True">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition MinWidth="150" Width="150"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
@@ -34,7 +34,12 @@
             <Button Content="btn8"/>
             <Button Content="btn9"/>
         </StackPanel>
-        <WrapPanel Grid.Column="1" Grid.Row="0" Orientation="Vertical">
+        <GridSplitter Grid.Row="1" 
+                      Width="5" 
+                      Grid.Column="1" 
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Stretch"/>
+        <WrapPanel Grid.Column="2" Grid.Row="0" Orientation="Vertical">
             <Button Content="btn1"/>
             <Button Content="btn2"/>
             <Button Content="btn3"/>
@@ -45,5 +50,7 @@
             <Button Content="btn8"/>
             <Button Content="btn9"/>
         </WrapPanel>
+
+
     </Grid>
 </Window>
