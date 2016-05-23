@@ -1,1 +1,3 @@
-* WpfTraining
+# WpfTraining
+
+* sample xaml
