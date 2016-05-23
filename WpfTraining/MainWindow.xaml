@@ -51,6 +51,13 @@
             <Button Content="btn9"/>
         </WrapPanel>
 
+        <Button Width="100" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Content="center" Click="Button_Click"/>
+        <RepeatButton Width="100" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,5" Content="center"  Delay="500" Interval="300" Click="RepeatButton_Click"/>
 
+
+        <Grid Grid.Column="1" Grid.Row="1" Margin="10">
+            <DataGrid Name="dataGrid"/>
+        </Grid>
+        
     </Grid>
 </Window>
