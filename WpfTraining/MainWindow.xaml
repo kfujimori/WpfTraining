@@ -56,7 +56,20 @@
 
 
         <Grid Grid.Column="1" Grid.Row="1" Margin="10">
-            <DataGrid Name="dataGrid"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                
+                <DataGrid Grid.Column="0" Name="dataGrid"/>
+                <DataGrid Grid.Column="1" Name="dataGrid2" AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="名前" Binding="{Binding Name}"/>
+                        <DataGridCheckBoxColumn Header="権限" Binding="{Binding AuthMember}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
         </Grid>
         
     </Grid>

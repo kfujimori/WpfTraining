@@ -36,7 +36,9 @@ namespace WpfTraining
                 })
                 
             );
-            this.dataGrid.ItemsSource = data;
+            dataGrid.ItemsSource = data;
+            dataGrid.AutoGeneratingColumn += dataGrid_AutoGeneratingColumn;
+            dataGrid2.ItemsSource = data;
         }
 
         private int count = 0;
@@ -51,6 +53,32 @@ namespace WpfTraining
         {
             var button = (RepeatButton)sender;
             button.Content = string.Format("{0}回", ++count2);
+        }
+
+        private void dataGrid_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+            switch(e.PropertyName)
+            {
+                case "Name":
+                    e.Column.Header = "name";
+                    e.Column.DisplayIndex = 0;
+                    break;
+                case "Age":
+                    e.Column.Header = "age";
+                    e.Column.DisplayIndex = 1;
+                    break;
+                case "Gender":
+                    e.Cancel = true;
+                    break;
+                case "AuthMember":
+                    e.Column.Header = "auth";
+                    e.Column.DisplayIndex = 2;
+                    break;
+                default:
+                    throw new InvalidOperationException();
+
+
+            }
         }
     }
 }
