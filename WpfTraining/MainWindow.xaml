@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfTraining"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="350" Width="900">
     <Window.Resources>
         <Style TargetType="Button">
             <Setter Property="Width" Value="100"/>
@@ -58,8 +58,8 @@
         <Grid Grid.Column="1" Grid.Row="1" Margin="10">
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
+                    <ColumnDefinition Width="100*"/>
+                    <ColumnDefinition Width="100*"/>
                 </Grid.ColumnDefinitions>
                 
                 <DataGrid Grid.Column="0" Name="dataGrid"/>
@@ -67,6 +67,18 @@
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="名前" Binding="{Binding Name}"/>
                         <DataGridCheckBoxColumn Header="権限" Binding="{Binding AuthMember}"/>
+                        <DataGridComboBoxColumn Header="性別"
+                                            SelectedValueBinding="{Binding Gender}"
+                                            DisplayMemberPath="Label"
+                                            SelectedValuePath="Value">
+                            <DataGridComboBoxColumn.ItemsSource>
+                                <x:Array Type="{x:Type local:GenderComboBoxItem}">
+                                    <local:GenderComboBoxItem Label="未選択" Value="none"/>
+                                    <local:GenderComboBoxItem Label="男" Value="men"/>
+                                    <local:GenderComboBoxItem Label="女" Value="women"/>
+                                </x:Array>
+                            </DataGridComboBoxColumn.ItemsSource>
+                        </DataGridComboBoxColumn>
                     </DataGrid.Columns>
                 </DataGrid>
             </Grid>
