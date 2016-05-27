@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfTraining"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="900">
+        Title="MainWindow" Height="350" Width="600">
     <Window.Resources>
         <Style TargetType="Button">
             <Setter Property="Width" Value="100"/>
@@ -39,21 +39,68 @@
                       Grid.Column="1" 
                       HorizontalAlignment="Left"
                       VerticalAlignment="Stretch"/>
-        <WrapPanel Grid.Column="2" Grid.Row="0" Orientation="Vertical">
-            <Button Content="btn1"/>
-            <Button Content="btn2"/>
-            <Button Content="btn3"/>
-            <Button Content="btn4"/>
-            <Button Content="btn5"/>
-            <Button Content="btn6"/>
-            <Button Content="btn7"/>
-            <Button Content="btn8"/>
-            <Button Content="btn9"/>
-        </WrapPanel>
+        <Grid Grid.Column="1" Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50*"/>
+                <ColumnDefinition Width="50*"  />
+            </Grid.ColumnDefinitions>
+            <WrapPanel Grid.Column="0" Grid.Row="0" Orientation="Vertical">
+                <Button Content="btn1"/>
+                <Button Content="btn2"/>
+                <Button Content="btn3"/>
+                <Button Content="btn4"/>
+                <Button Content="btn5"/>
+                <Button Content="btn6"/>
+                <Button Content="btn7"/>
+                <Button Content="btn8"/>
+                <Button Content="btn9"/>
+            </WrapPanel>
+            <Grid Grid.Column="1" Background="Gray">
+                <Button Width="100"  HorizontalAlignment="Center" VerticalAlignment="Center" Content="center" Click="Button_Click" />
+                <RepeatButton Width="100" HorizontalAlignment="Center" VerticalAlignment="Bottom" Content="bottom"  Delay="500" Interval="300" Click="RepeatButton_Click" Margin="0,0,0,5"/>
+            </Grid>
+        </Grid>
 
-        <Button Width="100" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Content="center" Click="Button_Click"/>
-        <RepeatButton Width="100" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,5" Content="center"  Delay="500" Interval="300" Click="RepeatButton_Click"/>
-
+        <Grid Grid.Column="0" Grid.Row="1">
+            <DataGrid Name="dataGrid3" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.HeaderStyle>
+                            <Style TargetType="DataGridColumnHeader">
+                                <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                            </Style>
+                        </DataGridTemplateColumn.HeaderStyle>
+                        <DataGridTemplateColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBlock Text="名前" />
+                                    <Separator />
+                                    <TextBlock Text="認証済み" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.HeaderTemplate>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Name}" />
+                                    <Separator />
+                                    <CheckBox IsEnabled="False" IsChecked="{Binding AuthMember}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                        <DataGridTemplateColumn.CellEditingTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBox Text="{Binding Name}" />
+                                    <Separator />
+                                    <CheckBox IsChecked="{Binding AuthMember}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellEditingTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
 
         <Grid Grid.Column="1" Grid.Row="1" Margin="10">
             <Grid>

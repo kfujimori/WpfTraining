@@ -39,6 +39,19 @@ namespace WpfTraining
             dataGrid.ItemsSource = data;
             dataGrid.AutoGeneratingColumn += dataGrid_AutoGeneratingColumn;
             dataGrid2.ItemsSource = data;
+
+
+            var data3 = new ObservableCollection<Person>(
+                Enumerable.Range(1, 100).Select(i => new Person
+                {
+                    Name = "あああ" + i,
+                    Gender = i % 2 == 0 ? Gender.men : Gender.women,
+                    Age = 20 + i % 50,
+                    AuthMember = i % 5 == 0
+                })
+
+            );
+            dataGrid3.ItemsSource = data3;
         }
 
         private int count = 0;
