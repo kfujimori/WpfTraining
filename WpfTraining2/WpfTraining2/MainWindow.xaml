@@ -7,6 +7,92 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+        </Grid.RowDefinitions>
+        <TreeView Grid.Column="0">
+            <TreeViewItem Header="Item1">
+                <TreeViewItem Header="Item1-1">
+                    <TreeViewItem Header="Item1-1-1"/>
+                    <TreeViewItem Header="Item1-1-2"/>
+                    <TreeViewItem Header="Item1-1-3"/>
+                </TreeViewItem>
+                <TreeViewItem Header="Item1-2">
+                    <TreeViewItem Header="Item1-2-1"/>
+                    <TreeViewItem Header="Item1-2-2"/>
+                    <TreeViewItem Header="Item1-2-3"/>
+                </TreeViewItem>
+            </TreeViewItem>
+            <TreeViewItem Header="Item2" IsExpanded="True">
+                <TreeViewItem Header="Item2-1" IsEnabled="True" IsSelected="True">
+                    <TreeViewItem Header="Item2-1-1"/>
+                    <TreeViewItem Header="Item2-1-2"/>
+                    <TreeViewItem Header="Item2-1-3"/>
+                </TreeViewItem>
+            </TreeViewItem>
+        </TreeView>
+
+
+        <TreeView Grid.Column="1">
+            <TreeViewItem IsExpanded="True">
+                <TreeViewItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Rectangle Fill="Olive" Width="15" Height="15" />
+                        <TextBlock Text="矢印アイコン" Margin="5,0" />
+                        <Rectangle Fill="Olive" Width="15" Height="15" />
+                    </StackPanel>
+                </TreeViewItem.Header>
+                <TreeViewItem>
+                    <TreeViewItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Grid Margin="2.5">
+                                <Ellipse Width="20" Height="20" Stroke="Olive" StrokeThickness="2" />
+                                <TextBlock Text="↑" HorizontalAlignment="Center"  
+    VerticalAlignment="Center" FontWeight="Bold" Foreground="Olive" />
+                            </Grid>
+                            <TextBlock Text="上矢印" VerticalAlignment="Center" />
+                        </StackPanel>
+                    </TreeViewItem.Header>
+                </TreeViewItem>
+                <TreeViewItem>
+                    <TreeViewItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Grid Margin="2.5">
+                                <Ellipse Width="20" Height="20" Stroke="Olive" StrokeThickness="2" />
+                                <TextBlock Text="→" HorizontalAlignment="Center"  
+    VerticalAlignment="Center" FontWeight="Bold" Foreground="Olive" />
+                            </Grid>
+                            <TextBlock Text="右矢印" VerticalAlignment="Center" />
+                        </StackPanel>
+                    </TreeViewItem.Header>
+                </TreeViewItem>
+                <TreeViewItem>
+                    <TreeViewItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Grid Margin="2.5">
+                                <Ellipse Width="20" Height="20" Stroke="Olive" StrokeThickness="2" />
+                                <TextBlock Text="←" HorizontalAlignment="Center"  
+    VerticalAlignment="Center" FontWeight="Bold" Foreground="Olive" />
+                            </Grid>
+                            <TextBlock Text="左矢印" VerticalAlignment="Center" />
+                        </StackPanel>
+                    </TreeViewItem.Header>
+                </TreeViewItem>
+            </TreeViewItem>
+        </TreeView>
+
+
+        <TreeView Grid.Column="0" Grid.Row="1" Name="treeView">
+            <TreeView.ItemTemplate>
+                <HierarchicalDataTemplate DataType="local:Person" ItemsSource="{Binding Children}">
+                    <TextBlock Text="{Binding Name}"/>
+                </HierarchicalDataTemplate>
+            </TreeView.ItemTemplate>
+        </TreeView>
     </Grid>
 </Window>

@@ -23,6 +23,36 @@ namespace WpfTraining2
         public MainWindow()
         {
             InitializeComponent();
+
+            this.treeView.ItemsSource = new List<Person>
+            {
+                new Person
+                {
+                    Name = "田中  太郎",
+                    Children = new List<Person>
+                    {
+                        new Person { Name = "田中  花子" },
+                        new Person { Name = "田中  一郎" },
+                        new Person
+                        {
+                            Name = "木村  貫太郎",
+                            Children = new List<Person>
+                            {
+                                new Person { Name = "木村  はな" },
+                                new Person { Name = "木村  梅" },
+                            }
+                        }
+                    }
+                },
+                new Person
+                {
+                    Name = "田中  次郎",
+                    Children = new List<Person>
+                    {
+                        new Person { Name = "田中  三郎" }
+                    }
+                }
+            };
         }
     }
 }
