@@ -1,0 +1,17 @@
+﻿<Window x:Class="WpfTraining3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfTraining3"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="525">
+    <Grid>
+        <Calendar x:Name="calendar" MouseDoubleClick="calendar_MouseDoubleClick" MouseLeftButtonDown="calendar_MouseLeftButtonDown" MouseDown="hoge" Margin="5" VerticalAlignment="Top" HorizontalAlignment="Left" SelectionMode="MultipleRange">
+            <Calendar.RenderTransform>
+                <ScaleTransform ScaleX="2" ScaleY="2"/>
+            </Calendar.RenderTransform>
+        </Calendar>
+        <Button Content="selectedDate" Width="100" Height="30" VerticalAlignment="Bottom" Margin="5" Click="Button_Click"/>
+    </Grid>
+</Window>
