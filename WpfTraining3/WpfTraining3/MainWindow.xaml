@@ -1,37 +1,47 @@
-﻿<Window x:Class="WpfTraining3.MainWindow"
+﻿
+<Window x:Class="WpfTraining3.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfTraining3"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="1000">
-    <Grid>
-        <WrapPanel>
-        <Calendar x:Name="calendar"
-                  MouseDoubleClick="calendar_MouseDoubleClick"
-                  MouseLeftButtonDown="calendar_MouseLeftButtonDown"
-                  MouseDown="hoge"
+        Title="MainWindow" Height="600" Width="1000">
+
+    
+    <StackPanel>
+        <WrapPanel Height="350">
+            <Calendar x:Name="calendar"
+                      MouseDoubleClick="calendar_MouseDoubleClick"
+                      MouseLeftButtonDown="calendar_MouseLeftButtonDown"
+                      MouseDown="hoge"
+                      Margin="5"
+                      VerticalAlignment="Top"
+                      HorizontalAlignment="Left"
+                      SelectionMode="MultipleRange">
+                <Calendar.RenderTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2"/>
+                </Calendar.RenderTransform>
+            </Calendar>
+            <Calendar x:Name="calendar2"
                   Margin="5"
                   VerticalAlignment="Top"
-                  HorizontalAlignment="Left"
                   SelectionMode="MultipleRange">
-            <Calendar.RenderTransform>
-                <ScaleTransform ScaleX="2" ScaleY="2"/>
-            </Calendar.RenderTransform>
-        </Calendar>
-        <Calendar x:Name="calendar2"
-                  Margin="5"
-                  VerticalAlignment="Top"
-                  SelectionMode="MultipleRange">
-            <Calendar.RenderTransform>
-                <ScaleTransform CenterX="-180" ScaleX="2" ScaleY="2"/>
-            </Calendar.RenderTransform>
-        </Calendar>
+                <Calendar.RenderTransform>
+                    <ScaleTransform CenterX="-180" ScaleX="2" ScaleY="2"/>
+                </Calendar.RenderTransform>
+            </Calendar>
         </WrapPanel>
-        <WrapPanel VerticalAlignment="Bottom">
+
+        <Label Content="choose date (long version"/>
+        <DatePicker Width="300" HorizontalAlignment="Left" SelectedDateFormat="Long" SelectedDateChanged="DatePicker_SelectedDateChanged" FontSize="30" CalendarStyle="{StaticResource styleCalendar}" />
+        <Label Content="choose date (short version"/>
+        <DatePicker Width="300" HorizontalAlignment="Left" SelectedDateFormat="short" SelectedDateChanged="DatePicker_SelectedDateChanged_1"/>
+
+
+        <WrapPanel>
             <Button Content="selectedDates" Width="100" Height="30" VerticalAlignment="Bottom" Margin="5" Click="Button_Click"/>
             <Button Content="selectedStartDate" Width="100" Height="30" VerticalAlignment="Bottom" Margin="5" Click="Button_Click_1"/>
         </WrapPanel>
-    </Grid>
+    </StackPanel>
 </Window>

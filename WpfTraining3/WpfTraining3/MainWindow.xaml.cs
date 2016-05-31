@@ -24,14 +24,14 @@ namespace WpfTraining3
         {
             InitializeComponent();
 
-            // 今日より前は、選択不可能にする。 
+            // calendar 1
             this.calendar.BlackoutDates.AddDatesInPast();
-            // 翌日から4日間も選択不可能にする 
             this.calendar.BlackoutDates.Add(
                 new CalendarDateRange(
                     DateTime.Today.AddDays(1),
                     DateTime.Today.AddDays(4)));
 
+            // calendar 2
             this.calendar2.DisplayDateStart = DateTime.Now.AddDays(-5);
             this.calendar2.DisplayDateEnd = DateTime.Now.AddMonths(1).AddDays(-1);
         }
@@ -66,6 +66,16 @@ namespace WpfTraining3
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             
+        }
+
+        private void DatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void DatePicker_SelectedDateChanged_1(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }
