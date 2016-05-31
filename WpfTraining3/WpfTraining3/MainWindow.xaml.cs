@@ -31,6 +31,9 @@ namespace WpfTraining3
                 new CalendarDateRange(
                     DateTime.Today.AddDays(1),
                     DateTime.Today.AddDays(4)));
+
+            this.calendar2.DisplayDateStart = DateTime.Now.AddDays(-5);
+            this.calendar2.DisplayDateEnd = DateTime.Now.AddMonths(1).AddDays(-1);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -57,6 +60,11 @@ namespace WpfTraining3
         {
             MessageBox.Show("MouseDoubleClick");
             MessageBox.Show(this.calendar.SelectedDate.ToString());
+            
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
             
         }
     }

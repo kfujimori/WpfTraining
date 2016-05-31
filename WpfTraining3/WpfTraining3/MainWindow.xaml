@@ -5,13 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfTraining3"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="525">
+        Title="MainWindow" Height="500" Width="1000">
     <Grid>
-        <Calendar x:Name="calendar" MouseDoubleClick="calendar_MouseDoubleClick" MouseLeftButtonDown="calendar_MouseLeftButtonDown" MouseDown="hoge" Margin="5" VerticalAlignment="Top" HorizontalAlignment="Left" SelectionMode="MultipleRange">
+        <WrapPanel>
+        <Calendar x:Name="calendar"
+                  MouseDoubleClick="calendar_MouseDoubleClick"
+                  MouseLeftButtonDown="calendar_MouseLeftButtonDown"
+                  MouseDown="hoge"
+                  Margin="5"
+                  VerticalAlignment="Top"
+                  HorizontalAlignment="Left"
+                  SelectionMode="MultipleRange">
             <Calendar.RenderTransform>
                 <ScaleTransform ScaleX="2" ScaleY="2"/>
             </Calendar.RenderTransform>
         </Calendar>
-        <Button Content="selectedDate" Width="100" Height="30" VerticalAlignment="Bottom" Margin="5" Click="Button_Click"/>
+        <Calendar x:Name="calendar2"
+                  Margin="5"
+                  VerticalAlignment="Top"
+                  SelectionMode="MultipleRange">
+            <Calendar.RenderTransform>
+                <ScaleTransform CenterX="-180" ScaleX="2" ScaleY="2"/>
+            </Calendar.RenderTransform>
+        </Calendar>
+        </WrapPanel>
+        <WrapPanel VerticalAlignment="Bottom">
+            <Button Content="selectedDates" Width="100" Height="30" VerticalAlignment="Bottom" Margin="5" Click="Button_Click"/>
+            <Button Content="selectedStartDate" Width="100" Height="30" VerticalAlignment="Bottom" Margin="5" Click="Button_Click_1"/>
+        </WrapPanel>
     </Grid>
 </Window>
