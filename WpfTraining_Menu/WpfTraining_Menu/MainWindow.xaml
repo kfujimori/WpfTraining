@@ -5,8 +5,60 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfTraining_Menu"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="600" Width="800">
+
+    <Window.Resources>
+        <ContextMenu x:Key="menuListBox">
+            <MenuItem Header="挿入" />
+            <MenuItem Header="削除" />
+        </ContextMenu>
+        <ContextMenu x:Key="menuTab">
+            <MenuItem Header="タブの追加" />
+            <MenuItem Header="タブを閉じる" />
+        </ContextMenu>
+    </Window.Resources>
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Column="0" Grid.Row="0" Background="Azure">
+            <TabControl Height="233" HorizontalAlignment="Left" Margin="12,16,0,0"
+                Name="TabControl1" VerticalAlignment="Top" Width="254"
+                ContextMenu="{DynamicResource menuTab}">
+                <TabItem Header="言語" Name="TabItem1">
+                    <Grid>
+                        <ListBox HorizontalAlignment="Left"  Name="ListBox1" VerticalAlignment="Top" 
+                         Height="199" Width="244"
+                         ContextMenu="{DynamicResource menuListBox}">
+                            <ListBoxItem>VB.NET</ListBoxItem>
+                            <ListBoxItem>C#</ListBoxItem>
+                            <ListBoxItem>VC++</ListBoxItem>
+                            <ListBoxItem>F#</ListBoxItem>
+                            <ListBoxItem>PowerShell</ListBoxItem>
+                        </ListBox>
+                    </Grid>
+                </TabItem>
+            </TabControl>
+        </Grid>
         
+        
+        
+        
+        <Grid Grid.Column="1" Grid.Row="1">
+            <Grid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="メニュー１"/>
+                    <MenuItem Header="メニュー２"/>
+                    <MenuItem Header="メニュー３"/>
+                    <MenuItem Header="メニュー４"/>
+                </ContextMenu>
+            </Grid.ContextMenu>
+        </Grid>
     </Grid>
 </Window>
