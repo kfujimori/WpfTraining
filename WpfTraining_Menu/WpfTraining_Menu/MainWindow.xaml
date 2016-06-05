@@ -13,8 +13,18 @@
             <MenuItem Header="削除" />
         </ContextMenu>
         <ContextMenu x:Key="menuTab">
-            <MenuItem Header="タブの追加" />
-            <MenuItem Header="タブを閉じる" />
+            <MenuItem Header="タブの追加" Click="MenuItem_Click_1" />
+            <MenuItem Header="タブを閉じる" Click="MenuItem_Click_2"/>
+        </ContextMenu>
+        <ContextMenu x:Key="menuGrid">
+            <MenuItem Header="メニュー１" Click="MenuItem_Click"/>
+            <MenuItem Header="メニュー２"/>
+            <MenuItem Header="メニュー３">
+                <MenuItem Header="3-1"/>
+                <MenuItem Header="3-2"/>
+                <MenuItem Header="3-3"/>
+            </MenuItem>
+            <MenuItem Header="メニュー４"/>
         </ContextMenu>
     </Window.Resources>
     <Grid>
@@ -28,13 +38,19 @@
         </Grid.RowDefinitions>
 
         <Grid Grid.Column="0" Grid.Row="0" Background="Azure">
-            <TabControl Height="233" HorizontalAlignment="Left" Margin="12,16,0,0"
-                Name="TabControl1" VerticalAlignment="Top" Width="254"
-                ContextMenu="{DynamicResource menuTab}">
+            <TabControl HorizontalAlignment="Left"
+                        Margin="12,16,0,0"
+                        Name="TabControl1"
+                        VerticalAlignment="Top"
+                        Width="254"
+                        Height="233"
+                        ContextMenu="{DynamicResource menuTab}">
                 <TabItem Header="言語" Name="TabItem1">
                     <Grid>
-                        <ListBox HorizontalAlignment="Left"  Name="ListBox1" VerticalAlignment="Top" 
-                         Height="199" Width="244"
+                        <ListBox HorizontalAlignment="Left"
+                                 Name="ListBox1"
+                                 VerticalAlignment="Top" 
+                                 Height="199" Width="244"
                          ContextMenu="{DynamicResource menuListBox}">
                             <ListBoxItem>VB.NET</ListBoxItem>
                             <ListBoxItem>C#</ListBoxItem>
@@ -46,19 +62,61 @@
                 </TabItem>
             </TabControl>
         </Grid>
+
+
+        <Grid Grid.Column="1" Grid.Row="0">
+            <StackPanel Margin="10">
+                <CheckBox Content="on" IsChecked="True"/>
+                <CheckBox Content="off" IsChecked="False"/>
+                <CheckBox Content="others" IsChecked="False"/>
+                <Separator/>
+                <CheckBox IsThreeState="True"
+                        Content="checkbox"
+                        Checked="CheckBox_Checked"
+                        Unchecked="CheckBox_Unchecked"
+                        Indeterminate="CheckBox_Indeterminate"/>
+                <TextBlock x:Name="textBlock" Text="off"/>
+                <Separator/>
+            </StackPanel>
+        </Grid>
         
         
+        <Grid Grid.Column="0" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+                <ToolBarTray Grid.Row="0">
+                    <ToolBar Background="LightGray" >
+                        <Button Content="item1"/>
+                        <Button Content="item2"/>
+                        <Button Content="item3"/>
+                        <Separator/>
+                        <CheckBox Content="item4"/>
+                    </ToolBar>
+                    <ToolBar Background="LightSalmon" BandIndex="2">
+                        <Button Content="item6"/>
+                        <Separator/>
+                        <ToggleButton Content="item7"/>
+                    </ToolBar>
+                </ToolBarTray>
+                <Grid Grid.Row="1" Background="LightYellow">
+
+                </Grid>
+        </Grid>
         
         
-        <Grid Grid.Column="1" Grid.Row="1">
-            <Grid.ContextMenu>
-                <ContextMenu>
-                    <MenuItem Header="メニュー１"/>
-                    <MenuItem Header="メニュー２"/>
-                    <MenuItem Header="メニュー３"/>
-                    <MenuItem Header="メニュー４"/>
-                </ContextMenu>
-            </Grid.ContextMenu>
+        <Grid Grid.Column="1" Grid.Row="1" Background="Beige" ContextMenu="{DynamicResource menuGrid}">
+            <Menu Cursor="Hand" >
+                <MenuItem Header="file(_F)"/>
+                <MenuItem Header="edit(_D)"/>
+                <MenuItem Header="oprtion(_O)">
+                    <MenuItem IsCheckable="True" Header="option1"/>
+                    <MenuItem IsCheckable="True" Header="option2"/>
+                    <MenuItem IsCheckable="True" Header="option3"/>
+                </MenuItem>
+            </Menu>
         </Grid>
     </Grid>
 </Window>
