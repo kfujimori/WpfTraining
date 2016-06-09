@@ -77,6 +77,27 @@
                         Indeterminate="CheckBox_Indeterminate"/>
                 <TextBlock x:Name="textBlock" Text="off"/>
                 <Separator/>
+                <ComboBox x:Name="comboBox">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Name}" Margin="2.5"/>
+                                <TextBlock Text="{Binding Age}" Margin="2.5"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+                <Separator/>
+                <ComboBox x:Name="comboBoxEditable" IsEditable="True" TextSearch.TextPath="Name">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Name}" Margin="2.5"/>
+                                <TextBlock Text="{Binding Age}" Margin="2.5"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
             </StackPanel>
         </Grid>
         

@@ -23,6 +23,13 @@ namespace WpfTraining_Menu
         public MainWindow()
         {
             InitializeComponent();
+
+            var items = Enumerable.Range(1, 10)
+                .Select(i => new Person() { Name = "ほげ" + i, Age = i + 20 })
+                .ToList();
+
+            this.comboBox.ItemsSource = items;
+            this.comboBoxEditable.ItemsSource = items;
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
