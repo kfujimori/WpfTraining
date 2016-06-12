@@ -1,3 +1,31 @@
-# WpfTraining
+# what's this
 
-* sample xaml
+* these are samples of xaml.
+
+## Solution "WpfTraining"
+
+* wrappanel
+* stackpanel
+* button
+* datagrid
+* scrollviewer
+* gridsplitter
+
+## Solution "WpfTraining2"
+
+* treeview
+
+## Solution "WpfTraining3"
+
+* calendar
+
+## Solution "WpfTraining_Menu"
+* contextmenu
+* menu
+* toolbar
+* checkbox
+* combobox
+* listbox
+* group
+* radiobutton
+
