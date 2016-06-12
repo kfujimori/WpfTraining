@@ -23,17 +23,19 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Column="0" Grid.Row="0">
-            <Button Content="btn1"/>
-            <Button Content="btn2"/>
-            <Button Content="btn3"/>
-            <Button Content="btn4"/>
-            <Button Content="btn5"/>
-            <Button Content="btn6"/>
-            <Button Content="btn7"/>
-            <Button Content="btn8"/>
-            <Button Content="btn9"/>
-        </StackPanel>
+        <ScrollViewer VerticalScrollBarVisibility="auto" CanContentScroll="True">
+            <StackPanel Grid.Column="0" Grid.Row="0">
+                <Button Content="btn1"/>
+                <Button Content="btn2"/>
+                <Button Content="btn3"/>
+                <Button Content="btn4"/>
+                <Button Content="btn5"/>
+                <Button Content="btn6"/>
+                <Button Content="btn7"/>
+                <Button Content="btn8"/>
+                <Button Content="btn9"/>
+            </StackPanel>
+        </ScrollViewer>
         <GridSplitter Grid.Row="1" 
                       Width="5" 
                       Grid.Column="1" 
