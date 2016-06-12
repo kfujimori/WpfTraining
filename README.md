@@ -4,12 +4,12 @@
 
 ## Solution "WpfTraining"
 
-* wrappanel
-* stackpanel
+* wrap panel
+* stack panel
 * button
-* datagrid
-* scrollviewer
-* gridsplitter
+* data grid
+* scroll viewer
+* grid splitter
 
 ## Solution "WpfTraining2"
 
@@ -19,13 +19,20 @@
 
 * calendar
 
+## Solution "WpfTraining3"
+
+* tab bar
+* slider
+* file dialog
+* progress bar
+
 ## Solution "WpfTraining_Menu"
-* contextmenu
+* contex tmenu
 * menu
-* toolbar
-* checkbox
-* combobox
-* listbox
+* tool bar
+* check box
+* combo box
+* list box
 * group
-* radiobutton
+* radio button
 

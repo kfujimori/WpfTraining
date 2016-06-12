@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfTraining4"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="350" Width="900">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -79,6 +79,27 @@
                 </StackPanel>
             </StackPanel>
         </Grid>
+
+        <StackPanel Grid.Column="1" Grid.Row="1" Background="#79c" Margin="5,0,5,5">
+            <Label Content="Maximum=100, Value=50" />
+            <ProgressBar Maximum="100" Value="50" Height="20" />
+            <Label Content="IsIndeterminate = True" />
+            <ProgressBar IsIndeterminate="True" Height="20" />
+            <Separator/>
+            <StatusBar>
+                <StatusBarItem Width="100">
+                    <TextBlock Text="status bar sample"/>
+                </StatusBarItem>
+                <Separator/>
+                <StatusBarItem>
+                    <ProgressBar Height="17" IsIndeterminate="True" MinWidth="100" />
+                </StatusBarItem>
+                <Separator />
+                <StatusBarItem Width="122" HorizontalAlignment="Right">
+                    <TextBlock Text="display of information"/>
+                </StatusBarItem>
+            </StatusBar>
+        </StackPanel>
 
     </Grid>
 </Window>
