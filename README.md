@@ -19,12 +19,17 @@
 
 * calendar
 
-## Solution "WpfTraining3"
+## Solution "WpfTraining4"
 
 * tab bar
 * slider
 * file dialog
 * progress bar
+
+
+## Solution "WpfTraining4"
+
+* hoge
 
 ## Solution "WpfTraining_Menu"
 * contex tmenu
