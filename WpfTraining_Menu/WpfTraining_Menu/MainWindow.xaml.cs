@@ -64,5 +64,11 @@ namespace WpfTraining_Menu
         {
             this.textBlock.Text = "others";
         }
+
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            var radioButton = (RadioButton)sender;
+            this.textBlockSelected.Text = radioButton.Content.ToString();
+        }
     }
 }

@@ -98,6 +98,16 @@
                         </DataTemplate>
                     </ComboBox.ItemTemplate>
                 </ComboBox>
+                <Separator/>
+                <GroupBox Header="group1">
+                    <StackPanel>
+                        <RadioButton GroupName="1" Content="radio1" Checked="RadioButton_Checked"/>
+                        <RadioButton GroupName="1" Content="radio2" Checked="RadioButton_Checked"/>
+                        <RadioButton GroupName="2" Content="radioa" Checked="RadioButton_Checked"/>
+                        <RadioButton GroupName="2" Content="radiob" Checked="RadioButton_Checked"/>
+                        <TextBlock x:Name="textBlockSelected"/>
+                    </StackPanel>
+                </GroupBox>
             </StackPanel>
         </Grid>
         
