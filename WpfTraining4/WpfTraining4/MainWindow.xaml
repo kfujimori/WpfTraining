@@ -7,6 +7,78 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Column="0" Grid.Row="0" Margin="5" Background="#8af">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="25" />
+                <ColumnDefinition Width="80*"/>
+                <ColumnDefinition Width="30"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="80*"/>
+                <RowDefinition Height="20"/>
+            </Grid.RowDefinitions>
+            <Slider Grid.Column="1" Grid.Row="0" x:Name="slider" Minimum="-20" Maximum="50" Value="0"
+                    ValueChanged="slider_ValueChanged"/>
+                <TextBlock Grid.Column="2" Grid.Row="0" Text="{Binding Value , ElementName=slider}"/>
+            
+                <Slider Grid.Column="0" Grid.Row="1" x:Name="slider2" Minimum="-20" Maximum="50" Value="0" Orientation="Vertical" IsDirectionReversed="True"/>
+                <TextBlock Grid.Column="0" Grid.Row="2" Text="{Binding Value , ElementName=slider2}"/>
+        </Grid>
+
+        <Grid Grid.Column="1" Grid.Row="0" Margin="5" Background="#8a8">
+            <TabControl x:Name="tabControl" Background="#cfc">
+                <TabControl.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Name}"/>
+                    </DataTemplate>
+                </TabControl.ItemTemplate>
+                <TabControl.ContentTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Grid.Row="0" Content="Name"/>
+                            <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding Name}" VerticalAlignment="Center"/>
+                            <Label Grid.Column="0" Grid.Row="1" Content="Age"/>
+                            <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding Age}" VerticalAlignment="Center"/>
+                        </Grid>
+                    </DataTemplate>
+                </TabControl.ContentTemplate>
+            </TabControl>
+        </Grid>
+
+        <Grid Grid.Column="0" Grid.Row="1" Background="#fbb" Margin="5,0,5,5">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Button Content="fileOpen" Click="Button_Click" Margin="2"/>
+                    <Button Content="fileSage" Click="Button_Click_1" Margin="2"/>
+                    <TextBlock x:Name="textBlockFileName"/>
+                </StackPanel>
+                <Separator/>
+                <StackPanel Margin="5">
+                    <Label Content="file (_F)" Target="{Binding ElementName=textbox1}"/>
+                    <TextBox x:Name="textbox1"/>
+                    <Label Content="edit (_E)" Target="{Binding ElementName=textbox2}"/>
+                    <TextBox x:Name="textbox2"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+
     </Grid>
 </Window>
