@@ -24,5 +24,22 @@ namespace WpfTraining5
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+            var popup = new[]
+            {
+                this.popup1,
+                this.popup2,
+                this.popup3,
+                this.popup4
+            };
+
+            foreach (var p in popup)
+            {
+                p.IsOpen = !p.IsOpen;
+            }
+        }
     }
 }

@@ -7,6 +7,60 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+
+        <Grid Grid.Column="0" Grid.Row="0" Background="#936" Margin="5">
+            <TextBlock>
+                <Run Text="run text. "/>
+                <Hyperlink NavigateUri="http://www.bing.com">link to bing </Hyperlink>
+                <Run Foreground="Red" Text="change color. "/>
+                <LineBreak/>
+                <Run FontFamily="Meiryo UI" Text="change font. "/>
+                <LineBreak/>
+                <Run Text="change line."/>
+            </TextBlock>
+        </Grid>
+
+        <Grid Grid.Column="1" Grid.Row="0" Background="#396" Margin="5">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button Content="popup button" Click="Button_Click"/>
+                <Popup x:Name="popup1">
+                    <TextBlock Background="LightGray" Text="button(default)" />
+                </Popup>
+                <Popup x:Name="popup2" Placement="Left">
+                    <TextBlock Background="LightGray" Text="left" />
+                </Popup>
+                <Popup x:Name="popup3" Placement="Top">
+                    <TextBlock Background="LightGray" Text="Top" />
+                </Popup>
+                <Popup x:Name="popup4" Placement="Right">
+                    <TextBlock Background="LightGray" Text="right" />
+                </Popup>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Column="0" Grid.Row="1" Background="#58a" Margin="5,0,5,5">
+            <StackPanel>
+                <Button Content="button" ToolTip="tooltip"/>
+                <Button Content="Button">
+                    <Button.ToolTip>
+                        <ToolTip>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="hoge.jpg" Height="100" />
+                                <TextBlock Text="hoge" />
+                            </StackPanel>
+                        </ToolTip>
+                    </Button.ToolTip>
+                </Button>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Window>
