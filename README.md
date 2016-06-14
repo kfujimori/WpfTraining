@@ -27,9 +27,11 @@
 * progress bar
 
 
-## Solution "WpfTraining4"
+## Solution "WpfTraining5"
 
-* hoge
+* popup
+* tooltip
+* textblock
 
 ## Solution "WpfTraining_Menu"
 * contex tmenu
