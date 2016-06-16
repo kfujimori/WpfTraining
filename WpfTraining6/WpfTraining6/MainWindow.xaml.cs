@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -64,6 +65,18 @@ namespace WpfTraining6
             bmp.StreamSource = ms;
             bmp.EndInit();
             this.image.Source = bmp;
+        }
+
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+            var dialog = new OpenFileDialog();
+            dialog.Filter = "動画|*.*";
+            if (dialog.ShowDialog() != true)
+            {
+                return;
+            }
+            var uri = new Uri(dialog.FileName);
+            this.mediaElement.Source = uri;
         }
     }
 }

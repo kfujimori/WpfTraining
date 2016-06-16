@@ -39,5 +39,16 @@
             </StackPanel>
         </Grid>
 
+        <Grid Grid.Column="0" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Menu>
+                <MenuItem Header="開く(_O)" Click="MenuItem_Click_1" />
+            </Menu>
+            <MediaElement x:Name="mediaElement" Grid.Row="1" />
+        </Grid>
+    
     </Grid>
 </Window>
